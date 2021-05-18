@@ -97,6 +97,6 @@ cat("\n")
 
 ## Write output to a .csv
 
-write.csv(Combined_gsa, file=paste(opt$path,"",opt$phenotype_name, "_all_Tclin_sets.csv", sep=""), quote = F, row.names = F)
+write.csv(Combined_gsa, file=paste(opt$path,"_",opt$phenotype_name, "_all_Tclin_sets.csv", sep=""), quote = F, row.names = F)
 
 rm(list = ls())
