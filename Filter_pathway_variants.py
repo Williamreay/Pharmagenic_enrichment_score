@@ -12,8 +12,8 @@ def check_args(args=None):
     parser.add_argument('-H', '--noheader', help="Indicate if summary statisitcs lack a header line.", action="store_true")
     parser.add_argument('-c', '--chr', help="Chromosome column number in GWAS file.", required=True)
     parser.add_argument('-b', '--bp', help="Position column number in GWAS file.", required=True)
-    parser.add_argument('-u', '--upstream', help="Size of additional upstream region to include. Default = 0.", default="0")
-    parser.add_argument('-d', '--downstream', help="Size of additional downstream region to include. Default = 0", default="0")
+    parser.add_argument('-u', '--upstream', help="Size of additional upstream region to include in bases, Default = 0.", default="0")
+    parser.add_argument('-d', '--downstream', help="Size of additional downstream region to include in bases, Default = 0", default="0")
     parser.add_argument('-o', '--output', help="Output file name for filtered GWAS.", required=True)
     return(parser.parse_args(args))
 
@@ -26,7 +26,7 @@ def filterGwas(gwasFile, sep, noheader, filterFile, chrCol, bpCol, upstream, dow
     except:
         print("ERROR: --chr, --bp, --upstream, and --downstream expect integer arguments.")
         sys.exit()
-    
+
     sep = sep.replace("\\t", "\t")
 
     filterDict = {}
@@ -65,7 +65,7 @@ def filterGwas(gwasFile, sep, noheader, filterFile, chrCol, bpCol, upstream, dow
             else:
                 print("WARNING: start position greater or equal to end position. Skipping:", "\t".join(line))
             filterDict[chrom].append(range(start, end))
-    
+
     with open(gwasFile, 'r') as f:
         filteredGwasList = []
         reader = csv.reader(f, delimiter=sep)
