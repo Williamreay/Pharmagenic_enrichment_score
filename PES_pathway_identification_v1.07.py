@@ -19,8 +19,8 @@ import pdb
 
 parser = argparse.ArgumentParser('MAGMA gene level and geneset level association analyses at different P value thresholds')
 parser.add_argument('--gwasfile', metavar=['filename'], type = str, help = 'GWAS summary statistics in the following format - SNP, CHR, BP, P')
-parser.add_argument('--upstream_boundary', metavar='[str]', type = str, help = "Upstream boundary for gene definition")
-parser.add_argument('--downstream_boundary', metavar='[str]', type = str, help = "Downstream boundary for gene definition")
+parser.add_argument('--upstream_boundary', metavar='[str]', type = str, help = "Upstream boundary for gene definition in kilobases")
+parser.add_argument('--downstream_boundary', metavar='[str]', type = str, help = "Downstream boundary for gene definition in kilobases")
 parser.add_argument('--geneloc', metavar=['filename'], type = str, help = 'Gene location file - ID, BP1, BP2, STRAND')
 parser.add_argument('--phenotype', metavar='[str]', type = str, help = 'GWAS phenotype name')
 parser.add_argument('--bfile', metavar= '{prefix}', type = str, help = 'Reference population plink binary fileset - .bed, .bim + .fam')
