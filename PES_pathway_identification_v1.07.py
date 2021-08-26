@@ -3,7 +3,7 @@
 """
 Created on Mon Jan 06 2020
 
-Pharmagenic enrichment score (PES) candidate pathway derivation - MAGMA v1.07 version
+Pharmagenic enrichment score (PES) candidate pathway derivation - MAGMA v1.07 version or above
 
 Author: William Reay - william.reay@uon.edu.au - github: https://github.com/Williamreay
 """
