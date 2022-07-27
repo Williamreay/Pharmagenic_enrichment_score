@@ -3,6 +3,8 @@ import sys
 import csv
 from copy import copy
 
+csv.field_size_limit(2147483647)
+
 def check_args(args=None):
     """Parse arguments"""
     parser = argparse.ArgumentParser(description="Filter a GWAS by a list of genomic regions.", formatter_class=argparse.RawTextHelpFormatter)
